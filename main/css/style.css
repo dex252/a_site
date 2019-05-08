@@ -1,3 +1,8 @@
+*{
+	margin:0;
+	padding:0;
+}
+
 .Header {
     justify-content: center;
     align-items: center; 
@@ -34,7 +39,7 @@
     position: relative;
 }
 
-.Menu{
+#menu{
 	display: inline-block;
     justify-content: center;
     align-items: center; 
@@ -53,35 +58,35 @@
   }
 }
 
-#buttonMainMenu{
+.buttonMainMenu{
 	display: inline-block;
 	float: right;
-	height: 40px;
+	height: 60px;
 	width: 135px;
 	background: transparent;
 	margin-left: 5px;
-	margin-right: 25px;
-	margin-top:10px;
+	margin-right: 10px;
+	margin-top:20px;
 }
 
-#buttonMainMenuLongType{
+#buttonRandomMenuType{
 	display: inline-block;
 	float: right;
-	height: 40px;
-	width: 280px;
+	height: 60px;
+	width: 170px;
 	background: transparent;
 	margin-right: 25px;
-	margin-top:10px;
+	margin-top:20px;
 }
 
-#buttonMainMenuEndType{
+#buttonMainMenuHelpType{
 	display: inline-block;
 	float: right;
-	height: 40px;
+	height: 60px;
 	width: 280px;
 	background: transparent;
 	margin-right: -90px;
-	margin-top:10px;
+	margin-top:20px;
 }
 
 #filler1{
@@ -96,38 +101,92 @@
     color: #4169E1; /* Цвет ссылок */
 }
 
-.ButtonMenu {      
+.ButtonMenuWhite {      
     position: relative; 
     font-size: 24pt;
+	line-height: 16px;
 	font-family: Impact, Arial, Helvetica, sans-serif;
     color: white;
     letter-spacing: 2px; /* расстояние между буквами */
-    text-transform: uppercase; /* переводим в верхний регистр */
     transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);  /* плавный переход м/у состояниями */
     cursor: pointer;/* тип курсора - лапа */
     user-select: none;/* запрет на выделение текста */
 }
 
-.ButtonMenu:hover { /*Стиль при наведении мыши на кнопку*/
+.ButtonMenuWhite:hover { /*Стиль при наведении мыши на кнопку*/
     color: var(--def); /*Включаем цвет ссылки*/
     transition-delay: .1s;/*Время до начала или исчезновения анимации*/
 }
 
-.ButtonMenu2 {      
+.ButtonRegistration {      
     position: relative; 
     font-size: 24pt;
 	font-family: Impact, Arial, Helvetica, sans-serif;
     color: black;
     letter-spacing: 2px; /* расстояние между буквами */
-    text-transform: uppercase; /* переводим в верхний регистр */
     transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);  /* плавный переход м/у состояниями */
     cursor: pointer;/* тип курсора - лапа */
     user-select: none;/* запрет на выделение текста */
 }
 
-.ButtonMenu2:hover { /*Стиль при наведении мыши на кнопку*/
+.ButtonRegistration:hover { /*Стиль при наведении мыши на кнопку*/
     color: var(--def); /*Включаем цвет ссылки*/
     transition-delay: .1s;/*Время до начала или исчезновения анимации*/
 }
 
+.ButtonEnter {      
+    position: relative; 
+    font-size: 24pt;
+	font-family: Impact, Arial, Helvetica, sans-serif;
+    color: white;
+    letter-spacing: 2px; /* расстояние между буквами */
+    transition: all 600ms cubic-bezier(0.77, 0, 0.175, 1);  /* плавный переход м/у состояниями */
+    cursor: pointer;/* тип курсора - лапа */
+    user-select: none;/* запрет на выделение текста */
+}
 
+.ButtonEnter:hover { /*Стиль при наведении мыши на кнопку*/
+    color: var(--def); /*Включаем цвет ссылки*/
+    transition-delay: .1s;/*Время до начала или исчезновения анимации*/
+}
+
+#mainSearch{
+	display: inline-block;
+	box-shadow: 0 0 10px rgba(0,100,200,0.9);
+	float: left;
+	height: 40px;
+	width: 1200px;
+	background: transparent;
+	margin-left: 100px;
+	margin-top:20px;
+}
+
+#searchSymbol{
+	display: inline-block;
+	background-image: url(../img/search/search.png);
+	background-size: cover;
+	float: left;
+	height: 40px;
+	width: 40px;
+}
+
+.SearchingClass{
+	 cursor: pointer;
+}
+
+#searchText{
+	display: block;
+	background: transparent;
+	margin-left:40px;
+	width: 100% - 40px;
+}
+
+.searchTextInput{
+	height: 40px;
+	padding: 10px 30px;
+	width: 100%;
+}
+
+input::-webkit-input-placeholder {
+color: skyblue !important;
+}
