@@ -31,7 +31,7 @@
 						<div class="ButtonEnter"> Вход</div>
 					</a>
 				</div>
-		</div>
+		</div> 
 		
 		<div id="menu">
 			<div id="filler1"></div>
@@ -83,6 +83,19 @@
 			</div>
 		</div>
 		
+		<div id ="animeBlocks">
+			<?php
+				for($i=1; $i<=12; $i++)
+				{ 
+					echo ('
+						<div id="block'.$i.'" class="animeBlock">
+							
+						</div>
+						');
+				}
+			?>
+
+		</div>
 	</header>
 
 

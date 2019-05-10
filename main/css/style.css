@@ -83,10 +83,10 @@
 	display: inline-block;
 	float: right;
 	height: 60px;
-	width: 280px;
+	width: 130px;
+	margin-right: 50px;
 	background: transparent;
-	margin-right: -90px;
-	margin-top:20px;
+	margin-top: 20px;
 }
 
 #filler1{
@@ -155,7 +155,7 @@
 	box-shadow: 0 0 10px rgba(0,100,200,0.9);
 	float: left;
 	height: 40px;
-	width: 1200px;
+	width: 90%; min-width: 700px; max-width:1400px;
 	background: transparent;
 	margin-left: 100px;
 	margin-top:20px;
@@ -189,4 +189,23 @@
 
 input::-webkit-input-placeholder {
 color: skyblue !important;
+}
+
+#animeBlocks{
+	display: inline-block;
+	margin-top:10px;
+	margin-left: 100px;
+	float: center;
+	background: red;
+	height: 990px;
+	width: 70%;	min-width:1000px;
+}
+
+.animeBlock{
+	display: inline-block;
+	background: black;
+	height: 32%;
+	width: 20%;
+	margin-left: 4%;
+	margin-bottom: 1%;
 }
