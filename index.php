@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="./js/functions.js"></script>
 	
 	<meta name="description" content="Сайт для просмотра аниме онлайн">
-	<meta name="keywords" content="аниме, видео, просмотр, онлайн, тянки, тентакли">
+	<meta name="keywords" content="аниме, видео, просмотр, онлайн, тянки, куны, наруто, пикачу, саске, аоши">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="./img/cat.ico" rel="shortcut icon" type="image/x-icon">
 	

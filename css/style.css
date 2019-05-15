@@ -221,3 +221,10 @@ color: skyblue !important;
 	height: 500px;
 	background: yellow;
 }
+
+/* Активная ссылка на странице */
+.active-button {
+    background-color:   #808080;
+    font: 17px Tahoma, sans-serif;
+    color:  #ffffff;
+}

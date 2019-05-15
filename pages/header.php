@@ -4,7 +4,7 @@
 	
 	<div id="register">
 		<a href="./index.html" type="text/css" class="TextMenuStyle">
-			<div class="ButtonRegistration" >Регистарция</div>
+			<div class="ButtonRegistration" >Регистрация</div>
 		</a>
 	</div>
 	
@@ -57,7 +57,7 @@
 	</div>
 			
 	<div id="buttonMainMenuGeneral" class="buttonMainMenu">
-		<a href="./index.html" type="text/css" class="TextMenuStyle">
+		<a href="./index.php" type="text/css" class="TextMenuStyle">
 			<div class="ButtonMenuWhite">Главная</div>
 		</a>
 	</div>

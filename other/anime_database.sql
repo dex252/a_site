@@ -19,9 +19,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База данных: `mysql`
+-- База данных: `anime_database`
 --
-
+CREATE DATABASE `anime_database`;
+USE `anime_database`;
 -- --------------------------------------------------------
 
 --
@@ -37,12 +38,11 @@ CREATE TABLE `age_limitations_table` (
 -- Дамп данных таблицы `age_limitations_table`
 --
 
-INSERT INTO `age_limitations_table` (`id_age_limitations`, `name`) VALUES
-(1, 'G'),
-(2, 'PG'),
-(3, 'PG-13'),
-(4, 'R'),
-(5, 'NC-17');
+INSERT INTO `age_limitations_table` (`id_age_limitations`, `name`) VALUES (1, 'G');
+INSERT INTO `age_limitations_table` (`id_age_limitations`, `name`) VALUES (2, 'PG');
+INSERT INTO `age_limitations_table` (`id_age_limitations`, `name`) VALUES (3, 'PG-13');
+INSERT INTO `age_limitations_table` (`id_age_limitations`, `name`) VALUES (4, 'R');
+INSERT INTO `age_limitations_table` (`id_age_limitations`, `name`) VALUES (5, 'NC-17');
 
 -- --------------------------------------------------------
 
@@ -72,18 +72,18 @@ CREATE TABLE `anime_table` (
 --
 
 INSERT INTO `anime_table` (`id_anime`, `id_ganre`, `id_age_limitations`, `id_video_type`, `id_exit_status`, `name`, `year`, `author`, `rating`, `num_series`, `discription`, `img_link`, `date_created`, `date_last_change`) VALUES
-(6, 1, 4, 1, 1, 'Класс Убийц', 0, NULL, NULL, 0, NULL, '.\\picture\\AnsatsuKyoushitsu.png', NULL, NULL),
-(7, 2, 3, 1, 1, 'Синий Эксзорцист', 0, NULL, NULL, 0, NULL, '.\\picture\\AonoExorcist.png', NULL, NULL),
-(10, 2, 4, 1, 1, 'За Гранью', 0, NULL, NULL, 0, NULL, '.\\picture\\BeyondtheBoundary.png', NULL, NULL),
-(11, 1, 1, 1, 1, 'Моя геройская академия', 0, NULL, NULL, 0, NULL, '.\\picture\\BokunoHeroAcademia.png', NULL, NULL),
-(12, 4, 5, 1, 1, 'Бандитос', 0, NULL, NULL, 0, NULL, './picture/Gangsta.png', NULL, NULL),
-(13, 3, 5, 1, 1, 'Хеллсинг', 0, NULL, NULL, 0, NULL, './picture/Hellsing.png', NULL, NULL),
-(14, 3, 5, 1, 1, 'Когда плачут цикады', 0, NULL, NULL, 0, NULL, './picture/HigurashinoNakuKoroni.png', NULL, NULL),
-(15, 1, 4, 1, 1, 'Истории Монстров(наверное)', 0, NULL, NULL, 0, NULL, './picture/Monogatari.png', NULL, NULL),
-(16, 2, 5, 1, 1, 'Нет игры - нет жизни', 0, NULL, NULL, 0, NULL, './picture/NoGameNoLife.png', NULL, NULL),
-(17, 1, 3, 1, 1, 'Кошечка из Сакурасо', 0, NULL, NULL, 0, NULL, './picture/SakurasounoPetnaKanojo.png', NULL, NULL),
-(18, 2, 3, 1, 1, 'Пожиратель Душ', 0, NULL, NULL, 0, NULL, './picture/SoulEater.png', NULL, NULL),
-(19, 2, 4, 1, 1, 'Врата Штейна', 0, NULL, NULL, 0, NULL, './picture/SteinsGate.png', NULL, NULL);
+(1, 1, 4, 1, 1, 'Класс Убийц', 0, NULL, NULL, 0, NULL, './picture/AnsatsuKyoushitsu.png', NULL, NULL),
+(2, 2, 3, 1, 1, 'Синий Эксзорцист', 0, NULL, NULL, 0, NULL, './picture/AonoExorcist.png', NULL, NULL),
+(3, 2, 4, 1, 1, 'За Гранью', 0, NULL, NULL, 0, NULL, './picture/BeyondtheBoundary.png', NULL, NULL),
+(4, 1, 1, 1, 1, 'Моя геройская академия', 0, NULL, NULL, 0, NULL, './picture/BokunoHeroAcademia.png', NULL, NULL),
+(5, 4, 5, 1, 1, 'Бандитос', 0, NULL, NULL, 0, NULL, './picture/Gangsta.png', NULL, NULL),
+(6, 3, 5, 1, 1, 'Хеллсинг', 0, NULL, NULL, 0, NULL, './picture/Hellsing.png', NULL, NULL),
+(7, 3, 5, 1, 1, 'Когда плачут цикады', 0, NULL, NULL, 0, NULL, './picture/HigurashinoNakuKoroni.png', NULL, NULL),
+(8, 1, 4, 1, 1, 'Истории Монстров(наверное)', 0, NULL, NULL, 0, NULL, './picture/Monogatari.png', NULL, NULL),
+(9, 2, 5, 1, 1, 'Нет игры - нет жизни', 0, NULL, NULL, 0, NULL, './picture/NoGameNoLife.png', NULL, NULL),
+(10, 1, 3, 1, 1, 'Кошечка из Сакурасо', 0, NULL, NULL, 0, NULL, './picture/SakurasounoPetnaKanojo.png', NULL, NULL),
+(11, 2, 3, 1, 1, 'Пожиратель Душ', 0, NULL, NULL, 0, NULL, './picture/SoulEater.png', NULL, NULL),
+(12, 2, 4, 1, 1, 'Врата Штейна', 0, NULL, NULL, 0, NULL, './picture/SteinsGate.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -145,6 +145,20 @@ INSERT INTO `ganre_table` (`id_ganre`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `series_table`
+--
+
+CREATE TABLE `series_table` (
+  `id_series` int(11) NOT NULL,
+  `id_anime` int(11) DEFAULT '0',
+  `name` varchar(255) DEFAULT NULL,
+  `num` int(11) DEFAULT '0',
+  `link` longtext
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `status_comment_table`
 --
 
@@ -164,67 +178,6 @@ CREATE TABLE `type_user_video_table` (
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- Структура таблицы `user`
---
-
-CREATE TABLE `user` (
-  `Host` char(60) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `User` char(16) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `Password` char(41) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL DEFAULT '',
-  `Select_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Insert_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Update_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Delete_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Create_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Drop_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Reload_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Shutdown_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Process_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `File_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Grant_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `References_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Index_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Alter_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Show_db_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Super_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Create_tmp_table_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Lock_tables_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Execute_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Repl_slave_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Repl_client_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Create_view_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Show_view_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Create_routine_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Alter_routine_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Create_user_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Event_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Trigger_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `Create_tablespace_priv` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N',
-  `ssl_type` enum('','ANY','X509','SPECIFIED') CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `ssl_cipher` blob NOT NULL,
-  `x509_issuer` blob NOT NULL,
-  `x509_subject` blob NOT NULL,
-  `max_questions` int(11) UNSIGNED NOT NULL DEFAULT '0',
-  `max_updates` int(11) UNSIGNED NOT NULL DEFAULT '0',
-  `max_connections` int(11) UNSIGNED NOT NULL DEFAULT '0',
-  `max_user_connections` int(11) UNSIGNED NOT NULL DEFAULT '0',
-  `plugin` char(64) COLLATE utf8_bin DEFAULT 'mysql_native_password',
-  `authentication_string` text COLLATE utf8_bin,
-  `password_expired` enum('N','Y') CHARACTER SET utf8 NOT NULL DEFAULT 'N'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Users and global privileges';
-
---
--- Дамп данных таблицы `user`
---
-
-INSERT INTO `user` (`Host`, `User`, `Password`, `Select_priv`, `Insert_priv`, `Update_priv`, `Delete_priv`, `Create_priv`, `Drop_priv`, `Reload_priv`, `Shutdown_priv`, `Process_priv`, `File_priv`, `Grant_priv`, `References_priv`, `Index_priv`, `Alter_priv`, `Show_db_priv`, `Super_priv`, `Create_tmp_table_priv`, `Lock_tables_priv`, `Execute_priv`, `Repl_slave_priv`, `Repl_client_priv`, `Create_view_priv`, `Show_view_priv`, `Create_routine_priv`, `Alter_routine_priv`, `Create_user_priv`, `Event_priv`, `Trigger_priv`, `Create_tablespace_priv`, `ssl_type`, `ssl_cipher`, `x509_issuer`, `x509_subject`, `max_questions`, `max_updates`, `max_connections`, `max_user_connections`, `plugin`, `authentication_string`, `password_expired`) VALUES
-('%', 'mysql', '*E74858DB86EBA20BC33D0AECAE8A8108C56B17FA', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', '', '', '', '', 0, 0, 0, 0, 'mysql_native_password', '', 'N'),
-('%', 'root', '', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', '', '', '', '', 0, 0, 0, 0, 'mysql_native_password', '', 'N');
-
--- --------------------------------------------------------
 
 --
 -- Структура таблицы `users_table`
@@ -311,6 +264,13 @@ ALTER TABLE `exit_status_table`
 --
 ALTER TABLE `ganre_table`
   ADD PRIMARY KEY (`id_ganre`);
+  
+--
+-- Индексы таблицы `series_table`
+--
+ALTER TABLE `series_table`
+  ADD PRIMARY KEY (`id_series`),
+  ADD KEY `id_anime` (`id_anime`);
 
 --
 -- Индексы таблицы `status_comment_table`
@@ -323,12 +283,6 @@ ALTER TABLE `status_comment_table`
 --
 ALTER TABLE `type_user_video_table`
   ADD PRIMARY KEY (`id_type`);
-
---
--- Индексы таблицы `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`Host`,`User`);
 
 --
 -- Индексы таблицы `users_table`
@@ -387,6 +341,12 @@ ALTER TABLE `exit_status_table`
 --
 ALTER TABLE `ganre_table`
   MODIFY `id_ganre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  
+--
+-- AUTO_INCREMENT для таблицы `series_table`
+--
+ALTER TABLE `series_table`
+  MODIFY `id_series` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT для таблицы `status_comment_table`
@@ -432,11 +392,18 @@ ALTER TABLE `anime_table`
   ADD CONSTRAINT `anime_table_ibfk_4` FOREIGN KEY (`id_exit_status`) REFERENCES `exit_status_table` (`id_exit_status`);
 
 --
+-- Ограничения внешнего ключа таблицы `series_table`
+--
+ALTER TABLE `series_table`
+  ADD CONSTRAINT `series_table_ibfk_1` FOREIGN KEY (`id_anime`) REFERENCES `anime_table` (`id_anime`);
+
+--
 -- Ограничения внешнего ключа таблицы `user_comments_table`
 --
 ALTER TABLE `user_comments_table`
   ADD CONSTRAINT `user_comments_table_ibfk_1` FOREIGN KEY (`id_anime`) REFERENCES `anime_table` (`id_anime`),
-  ADD CONSTRAINT `user_comments_table_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_table` (`id_user`);
+  ADD CONSTRAINT `user_comments_table_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_table` (`id_user`),
+  ADD CONSTRAINT `user_comments_table_ibfk_3` FOREIGN KEY (`id_status_comment`) REFERENCES `status_comment_table` (`id_status_comment`);
 
 --
 -- Ограничения внешнего ключа таблицы `user_video_table`
