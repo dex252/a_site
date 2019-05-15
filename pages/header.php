@@ -25,8 +25,8 @@
 		<div id="searchText">
 			<p><input class="searchTextInput" 
 						style="font-size:25px; 
-							font-family: Comic Sans MS, Comic Sans, cursive; 
-							color: deepskyblue;"
+						font-family: Comic Sans MS, Comic Sans, cursive; 
+						color: deepskyblue;"
 						type="search" 
 						name="searhInput" 
 						placeholder="Найти аниме по названию"> 

@@ -13,7 +13,7 @@
 	<meta name="keywords" content="аниме, видео, просмотр, онлайн, тянки, куны, наруто, пикачу, саске, аоши">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="./img/cat.ico" rel="shortcut icon" type="image/x-icon">
-	
+	<?php include "./pages/database/connect.php"; ?>
 </head>
 
 <body>
@@ -23,10 +23,10 @@
 	</header>
 	
 	<div id="foundation">
-		<div id ="animeBlocks">
+		<div id ="animeMainField">
 			<?php include "./pages/theMain/animeBlocks.php"; ?>
 		</div><div id="searchContainer">
-	
+			<?php include "./pages/searching.php"; ?>
 		</div>
 		
 	</div>	
