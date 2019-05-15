@@ -34,7 +34,22 @@
 		</div> 
 		
 		<div id="menu">
-			<div id="filler1"></div>
+			<div id="searchMenu">
+				<span class="SearchingClass" onclick="StartSearch()">
+					<div id ="searchSymbol"></div>
+				</span>
+			
+				<div id="searchText">
+					<p><input class="searchTextInput" 
+								style="font-size:25px; 
+									font-family: Comic Sans MS, Comic Sans, cursive; 
+									color: deepskyblue;"
+								type="search" 
+								name="searhInput" 
+								placeholder="Найти аниме по названию"> 
+					</p>
+				</div>
+			</div>
 			
 			<div id="buttonMainMenuHelpType">
 				<a href="./index.html" type="text/css" class="TextMenuStyle">
@@ -66,27 +81,10 @@
 
 		</div>
 		
-		<div id="mainSearch">
-			 <span class="SearchingClass" onclick="StartSearch()">
-				<div id ="searchSymbol"></div>
-			</span>
-			
-			<div id="searchText">
-				 <p><input class="searchTextInput" 
-							style="font-size:25px; 
-								  font-family: Comic Sans MS, Comic Sans, cursive; 
-								  color: deepskyblue;"
-							type="search" 
-							name="searhInput" 
-							placeholder="Найти аниме по названию"> 
-				 </p>
-			</div>
-		</div>
-		
 		<div id ="animeBlocks">
 			<?php
 				for($i=1; $i<=12; $i++)
-				{ 
+				{
 					echo ('
 						<div id="block'.$i.'" class="animeBlock">
 							

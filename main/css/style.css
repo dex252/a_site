@@ -64,7 +64,7 @@
 	height: 60px;
 	width: 135px;
 	background: transparent;
-	margin-left: 5px;
+	margin-left: 0px;
 	margin-right: 10px;
 	margin-top:20px;
 }
@@ -87,13 +87,6 @@
 	margin-right: 50px;
 	background: transparent;
 	margin-top: 20px;
-}
-
-#filler1{
-	display: inline-block;
-	height: 10px;
-	width:20%;
-	background: transparent;
 }
 
 .TextMenuStyle{
@@ -150,21 +143,22 @@
     transition-delay: .1s;/*Время до начала или исчезновения анимации*/
 }
 
-#mainSearch{
+#searchMenu{
 	display: inline-block;
-	box-shadow: 0 0 10px rgba(0,100,200,0.9);
+	box-shadow: 0 0 10px rgba(200,0,200,0.9);
 	float: left;
 	height: 40px;
-	width: 90%; min-width: 700px; max-width:1400px;
+	min-width: 400px; width: 40%;
 	background: transparent;
-	margin-left: 100px;
-	margin-top:20px;
+	margin-left: 20px;
+	margin-top:10px;
 }
 
 #searchSymbol{
 	display: inline-block;
 	background-image: url(../img/search/search.png);
 	background-size: cover;
+	float: left;
 	float: left;
 	height: 40px;
 	width: 40px;
