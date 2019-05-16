@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="content-type" content="text/html"; charset=UTF-8">
 
-    <title>Tentacles World</title>
+    <title>Neko cat</title>
 	
     <link rel="stylesheet" href="./css/style.css"> 
 	<script type="text/javascript" src="./js/functions.js"></script>

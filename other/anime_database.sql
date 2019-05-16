@@ -72,18 +72,18 @@ CREATE TABLE `anime_table` (
 --
 
 INSERT INTO `anime_table` (`id_anime`, `id_ganre`, `id_age_limitations`, `id_video_type`, `id_exit_status`, `name`, `year`, `author`, `rating`, `num_series`, `discription`, `img_link`, `date_created`, `date_last_change`) VALUES
-(1, 1, 4, 1, 1, 'Класс Убийц', 0, NULL, NULL, 0, NULL, './picture/AnsatsuKyoushitsu.png', NULL, NULL),
-(2, 2, 3, 1, 1, 'Синий Эксзорцист', 0, NULL, NULL, 0, NULL, './picture/AonoExorcist.png', NULL, NULL),
-(3, 2, 4, 1, 1, 'За Гранью', 0, NULL, NULL, 0, NULL, './picture/BeyondtheBoundary.png', NULL, NULL),
-(4, 1, 1, 1, 1, 'Моя геройская академия', 0, NULL, NULL, 0, NULL, './picture/BokunoHeroAcademia.png', NULL, NULL),
-(5, 4, 5, 1, 1, 'Бандитос', 0, NULL, NULL, 0, NULL, './picture/Gangsta.png', NULL, NULL),
-(6, 3, 5, 1, 1, 'Хеллсинг', 0, NULL, NULL, 0, NULL, './picture/Hellsing.png', NULL, NULL),
-(7, 3, 5, 1, 1, 'Когда плачут цикады', 0, NULL, NULL, 0, NULL, './picture/HigurashinoNakuKoroni.png', NULL, NULL),
-(8, 1, 4, 1, 1, 'Истории Монстров(наверное)', 0, NULL, NULL, 0, NULL, './picture/Monogatari.png', NULL, NULL),
-(9, 2, 5, 1, 1, 'Нет игры - нет жизни', 0, NULL, NULL, 0, NULL, './picture/NoGameNoLife.png', NULL, NULL),
-(10, 1, 3, 1, 1, 'Кошечка из Сакурасо', 0, NULL, NULL, 0, NULL, './picture/SakurasounoPetnaKanojo.png', NULL, NULL),
-(11, 2, 3, 1, 1, 'Пожиратель Душ', 0, NULL, NULL, 0, NULL, './picture/SoulEater.png', NULL, NULL),
-(12, 2, 4, 1, 1, 'Врата Штейна', 0, NULL, NULL, 0, NULL, './picture/SteinsGate.png', NULL, NULL);
+(1, 1, 4, 1, 1, 'Класс Убийц', 0, NULL, NULL, 0, NULL, './img/picture/AnsatsuKyoushitsu.png', NULL, NULL),
+(2, 2, 3, 1, 1, 'Синий Эксзорцист', 0, NULL, NULL, 0, NULL, './img/picture/AonoExorcist.png', NULL, NULL),
+(3, 2, 4, 1, 1, 'За Гранью', 0, NULL, NULL, 0, NULL, './img/picture/BeyondtheBoundary.png', NULL, NULL),
+(4, 1, 1, 1, 1, 'Моя геройская академия', 0, NULL, NULL, 0, NULL, './img/picture/BokunoHeroAcademia.png', NULL, NULL),
+(5, 4, 5, 1, 1, 'Бандитос', 0, NULL, NULL, 0, NULL, './img/picture/Gangsta.png', NULL, NULL),
+(6, 3, 5, 1, 1, 'Хеллсинг', 0, NULL, NULL, 0, NULL, './img/picture/Hellsing.png', NULL, NULL),
+(7, 3, 5, 1, 1, 'Когда плачут цикады', 0, NULL, NULL, 0, NULL, './img/picture/HigurashinoNakuKoroni.png', NULL, NULL),
+(8, 1, 4, 1, 1, 'Истории Монстров(наверное)', 0, NULL, NULL, 0, NULL, './img/picture/Monogatari.png', NULL, NULL),
+(9, 2, 5, 1, 1, 'Нет игры - нет жизни', 0, NULL, NULL, 0, NULL, './img/picture/NoGameNoLife.png', NULL, NULL),
+(10, 1, 3, 1, 1, 'Кошечка из Сакурасо', 0, NULL, NULL, 0, NULL, './img/picture/SakurasounoPetnaKanojo.png', NULL, NULL),
+(11, 2, 3, 1, 1, 'Пожиратель Душ', 0, NULL, NULL, 0, NULL, './img/picture/SoulEater.png', NULL, NULL),
+(12, 2, 4, 1, 1, 'Врата Штейна', 0, NULL, NULL, 0, NULL, './img/picture/SteinsGate.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
