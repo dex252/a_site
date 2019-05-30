@@ -5,7 +5,11 @@
     <meta http-equiv="content-type" content="text/html"; charset=UTF-8">
 
     <title>Neko cat</title>
-	
+
+	<?php $currentPage = 1; #текущая страница
+		  $maxPage = 0; #max число страниц
+		  
+	?>
     <link rel="stylesheet" type="text/css" href="./css/style.css"> 
 	<script type="text/javascript" src="./js/functions.js"></script>
 	<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
@@ -29,11 +33,10 @@
 		</div><div id="searchContainer">
 			<?php include "./pages/searching.php"; ?>
 		</div><div id ="scrollContainer">
-			
+			<?php include "./pages/theMain/pagesBlock.php"; ?>
 		</div>
 		
 	</div>	
-	
 </body>
 
 </html>

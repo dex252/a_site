@@ -111,6 +111,29 @@
     transition-delay: .1s;/*Время до начала или исчезновения анимации*/
 }
 
+.ButtonPage {      
+    position: relative; 
+    font-size: 24pt;
+	line-height: 16px;
+	font-family: Impact, Arial, Helvetica, sans-serif;
+    color: blue;
+    cursor: pointer;/* тип курсора - лапа */
+    user-select: none;/* запрет на выделение текста */
+	margin-top: 10px;
+	margin-left:15px;
+}
+
+.ButtonPageDots {      
+    position: relative; 
+    font-size: 24pt;
+	line-height: 16px;
+	font-family: Impact, Arial, Helvetica, sans-serif;
+    color: blue;
+    user-select: none;/* запрет на выделение текста */
+	margin-top: 10px;
+	margin-left:15px;
+}
+
 .ButtonRegistration {      
     position: relative; 
     font-size: 24pt;
@@ -220,7 +243,15 @@ color: skyblue !important;
 	margin-left: 30%;
 	height: 40px;
 	width: 20%;
+	min-width:370px;
+}
 
+.pageScroll{
+	display: inline-block;
+	background: yellow;
+	height: 90%;
+	width: 50px;
+	margin-left: 2%;
 }
 
 #searchContainer{
