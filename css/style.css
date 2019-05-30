@@ -199,7 +199,7 @@ color: skyblue !important;
 	margin-top:10px;
 	margin-left: 5%;
 	float: center;
-	background: transparent;
+	background: red;
 	height: 990px;
 	width: 70%;	min-width:1000px;
 }
@@ -212,6 +212,15 @@ color: skyblue !important;
 	width: 20%;
 	margin-left: 4%;
 	margin-bottom: 1%;
+}
+
+#scrollContainer{
+	display: inline-block;
+	background: black;
+	margin-left: 30%;
+	height: 40px;
+	width: 20%;
+
 }
 
 #searchContainer{

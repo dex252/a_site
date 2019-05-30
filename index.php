@@ -6,8 +6,9 @@
 
     <title>Neko cat</title>
 	
-    <link rel="stylesheet" href="./css/style.css"> 
+    <link rel="stylesheet" type="text/css" href="./css/style.css"> 
 	<script type="text/javascript" src="./js/functions.js"></script>
+	<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
 	
 	<meta name="description" content="Сайт для просмотра аниме онлайн">
 	<meta name="keywords" content="аниме, видео, просмотр, онлайн, тянки, куны, наруто, пикачу, саске, аоши">
@@ -27,6 +28,8 @@
 			<?php include "./pages/theMain/animeBlocks.php"; ?>
 		</div><div id="searchContainer">
 			<?php include "./pages/searching.php"; ?>
+		</div><div id ="scrollContainer">
+			
 		</div>
 		
 	</div>	
