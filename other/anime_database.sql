@@ -2,10 +2,10 @@
 -- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1:3306
--- Время создания: Май 15 2019 г., 16:25
+-- Хост: 127.0.0.1:3307
+-- Время создания: Июн 07 2019 г., 08:29
 -- Версия сервера: 5.6.41
--- Версия PHP: 7.2.10
+-- Версия PHP: 7.0.32
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,8 +21,7 @@ SET time_zone = "+00:00";
 --
 -- База данных: `anime_database`
 --
-CREATE DATABASE `anime_database`;
-USE `anime_database`;
+
 -- --------------------------------------------------------
 
 --
@@ -38,11 +37,12 @@ CREATE TABLE `age_limitations_table` (
 -- Дамп данных таблицы `age_limitations_table`
 --
 
-INSERT INTO `age_limitations_table` (`id_age_limitations`, `name`) VALUES (1, 'G');
-INSERT INTO `age_limitations_table` (`id_age_limitations`, `name`) VALUES (2, 'PG');
-INSERT INTO `age_limitations_table` (`id_age_limitations`, `name`) VALUES (3, 'PG-13');
-INSERT INTO `age_limitations_table` (`id_age_limitations`, `name`) VALUES (4, 'R');
-INSERT INTO `age_limitations_table` (`id_age_limitations`, `name`) VALUES (5, 'NC-17');
+INSERT INTO `age_limitations_table` (`id_age_limitations`, `name`) VALUES
+(1, 'G'),
+(2, 'PG'),
+(3, 'PG-13'),
+(4, 'R'),
+(5, 'NC-17');
 
 -- --------------------------------------------------------
 
@@ -83,7 +83,25 @@ INSERT INTO `anime_table` (`id_anime`, `id_ganre`, `id_age_limitations`, `id_vid
 (9, 2, 5, 1, 1, 'Нет игры - нет жизни', 0, NULL, NULL, 0, NULL, './img/picture/NoGameNoLife.png', NULL, NULL),
 (10, 1, 3, 1, 1, 'Кошечка из Сакурасо', 0, NULL, NULL, 0, NULL, './img/picture/SakurasounoPetnaKanojo.png', NULL, NULL),
 (11, 2, 3, 1, 1, 'Пожиратель Душ', 0, NULL, NULL, 0, NULL, './img/picture/SoulEater.png', NULL, NULL),
-(12, 2, 4, 1, 1, 'Врата Штейна', 0, NULL, NULL, 0, NULL, './img/picture/SteinsGate.png', NULL, NULL);
+(12, 2, 4, 1, 1, 'Врата Штейна', 0, NULL, NULL, 0, NULL, './img/picture/SteinsGate.png', NULL, NULL),
+(13, 2, 1, 1, 1, 'Seven', 0, NULL, NULL, 0, NULL, './img/picture/7.png', NULL, NULL),
+(14, 2, 1, 1, 1, 'Angel', 0, NULL, NULL, 0, NULL, './img/picture/Angel.png', NULL, NULL),
+(15, 2, 1, 1, 1, 'Another', 0, NULL, NULL, 0, NULL, './img/picture/another.png', NULL, NULL),
+(16, 2, 1, 1, 1, 'BeyondtheBoundaryMovie', 0, NULL, NULL, 0, NULL, './img/picture/BeyondtheBoundaryMovie.png', NULL, NULL),
+(17, 2, 1, 1, 1, 'Charlotte', 0, NULL, NULL, 0, NULL, './img/picture/Charlotte.png', NULL, NULL),
+(18, 2, 1, 1, 1, 'City', 0, NULL, NULL, 0, NULL, './img/picture/City.png', NULL, NULL),
+(19, 2, 1, 1, 1, 'DN', 0, NULL, NULL, 0, NULL, './img/picture/DN.png', NULL, NULL),
+(20, 2, 1, 1, 1, 'Eva', 0, NULL, NULL, 0, NULL, './img/picture/Eva.png', NULL, NULL),
+(21, 3, 1, 1, 1, 'Future', 0, NULL, NULL, 0, NULL, './img/picture/Future.png', NULL, NULL),
+(22, 2, 1, 1, 1, 'Gias', 0, NULL, NULL, 0, NULL, './img/picture/Gias.png', NULL, NULL),
+(23, 2, 1, 1, 1, 'gold', 0, NULL, NULL, 0, NULL, './img/picture/gold.png', NULL, NULL),
+(24, 1, 2, 1, 1, 'HxH', 0, NULL, NULL, 0, NULL, './img/picture/HxH.png', NULL, NULL),
+(25, 2, 1, 1, 1, 'Kamisama', 0, NULL, NULL, 0, NULL, './img/picture/Kamisama.png', NULL, NULL),
+(26, 2, 1, 1, 1, 'Kill', 0, NULL, NULL, 0, NULL, './img/picture/Kill.png', NULL, NULL),
+(27, 2, 1, 1, 1, 'Nora', 0, NULL, NULL, 0, NULL, './img/picture/Nora.png', NULL, NULL),
+(28, 2, 1, 1, 1, 'School', 0, NULL, NULL, 0, NULL, './img/picture/School.png', NULL, NULL),
+(29, 3, 5, 1, 1, 'Titan', 0, NULL, NULL, 0, NULL, './img/picture/Titan.png', NULL, NULL),
+(30, 4, 5, 1, 1, 'Toradora', 0, NULL, NULL, 0, NULL, './img/picture/Toradora.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -178,6 +196,7 @@ CREATE TABLE `type_user_video_table` (
   `name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
 
 --
 -- Структура таблицы `users_table`
@@ -264,7 +283,7 @@ ALTER TABLE `exit_status_table`
 --
 ALTER TABLE `ganre_table`
   ADD PRIMARY KEY (`id_ganre`);
-  
+
 --
 -- Индексы таблицы `series_table`
 --
@@ -322,7 +341,7 @@ ALTER TABLE `age_limitations_table`
 -- AUTO_INCREMENT для таблицы `anime_table`
 --
 ALTER TABLE `anime_table`
-  MODIFY `id_anime` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_anime` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT для таблицы `anime_type_table`
@@ -341,7 +360,7 @@ ALTER TABLE `exit_status_table`
 --
 ALTER TABLE `ganre_table`
   MODIFY `id_ganre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-  
+
 --
 -- AUTO_INCREMENT для таблицы `series_table`
 --
@@ -402,8 +421,7 @@ ALTER TABLE `series_table`
 --
 ALTER TABLE `user_comments_table`
   ADD CONSTRAINT `user_comments_table_ibfk_1` FOREIGN KEY (`id_anime`) REFERENCES `anime_table` (`id_anime`),
-  ADD CONSTRAINT `user_comments_table_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_table` (`id_user`),
-  ADD CONSTRAINT `user_comments_table_ibfk_3` FOREIGN KEY (`id_status_comment`) REFERENCES `status_comment_table` (`id_status_comment`);
+  ADD CONSTRAINT `user_comments_table_ibfk_2` FOREIGN KEY (`id_user`) REFERENCES `users_table` (`id_user`);
 
 --
 -- Ограничения внешнего ключа таблицы `user_video_table`
