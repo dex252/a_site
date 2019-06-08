@@ -6,10 +6,10 @@
   include_once '../../config/Database.php';
   include_once '../../models/Post.php';
   $posts_arr2 = array(
-      '1' => array(),
-      '2'=> array(),
-      '3'=> array(),
-      '4'=> array()
+      'A' => array(),
+      'B'=> array(),
+      'C'=> array(),
+      'D'=> array()
   );
   // Instantiate DB & connect
   $database = new Database();
@@ -39,7 +39,7 @@
       // Push to "data"
       #$posts_arr = []
       array_push($posts_arr, $post_item);
-      array_push($posts_arr2['1'], $post_item);
+      array_push($posts_arr2['A'], $post_item);
       // array_push($posts_arr['data'], $post_item);
     }
 
@@ -64,7 +64,7 @@
 
         // Push to "data"
         #$posts_arr = []
-        array_push($posts_arr2['2'], $post_item2);
+        array_push($posts_arr2['B'], $post_item2);
         // array_push($posts_arr['data'], $post_item);
       }
       #echo json_encode($posts_arr,JSON_UNESCAPED_SLASHES);
@@ -88,7 +88,7 @@
 
           // Push to "data"
           #$posts_arr = []
-        array_push($posts_arr2['3'], $post_item3);
+        array_push($posts_arr2['C'], $post_item3);
           // array_push($posts_arr['data'], $post_item);
         }
         #echo json_encode($posts_arr,JSON_UNESCAPED_SLASHES);
@@ -113,15 +113,18 @@
             // Push to "data"
             #$posts_arr = []
 
-        array_push($posts_arr2['4'], $post_item4);
+        array_push($posts_arr2['D'], $post_item4);
             // array_push($posts_arr['data'], $post_item);
           }
+          #$json json_encode($posts_arr2,JSON_UNESCAPED_SLASHES);
           echo json_encode($posts_arr2,JSON_UNESCAPED_SLASHES);
         }
       }
     }
   }
 
+
+#  print_r(json_decode($json));
 
 
 
