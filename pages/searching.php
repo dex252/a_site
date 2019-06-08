@@ -30,19 +30,16 @@
 				width: 90%;
 				margin-left: 15px;">
 		<?php
-			$query="select * from ganre_table;";
 		
-			$result = mysqli_query($conn, $query) or die("Ошибка " . mysqli_error($conn));
-		
-			if($result)
+			$json4 = file_get_contents('http://localhost/api/api/post/read_ganre_table.php');
+			$searchList = json_decode($json4);
+	
+			foreach ($searchList as $row)
 			{
-				while ($row = $result->fetch_assoc()) 
-				{
-					unset($id, $name);
-					$id = $row['id_ganre'];
-					$name = $row['name']; 
-					echo '<option value="'.$id.'">'.$name.'</option>';
-				}
+				unset($id_ganre, $name);
+				$id_ganre = $row->id_ganre;	
+				$name = $row->name;	
+				echo '<option value="'.$id_ganre.'">'.$name.'</option>';
 			}
 		?>
 	</select>
@@ -69,19 +66,15 @@
 				width: 90%;
 				margin-left: 15px;">
 		<?php
-			$query="select * from anime_type_table;";
-		
-			$result = mysqli_query($conn, $query) or die("Ошибка " . mysqli_error($conn));
-		
-			if($result)
+			$json4 = file_get_contents('http://localhost/api/api/post/read_anime_type_table.php');
+			$searchList = json_decode($json4);
+			echo $searchList;
+			foreach ($searchList as $row)
 			{
-				while ($row = $result->fetch_assoc()) 
-				{
-					unset($id, $name);
-					$id = $row['id_video_type'];
-					$name = $row['name']; 
-					echo '<option value="'.$id.'">'.$name.'</option>';
-				}
+				unset($id_video_type, $name);
+				$id_video_type = $row->id_video_type;	
+				$name = $row->name;	
+				echo '<option value="'.$id_video_type.'">'.$name.'</option>';
 			}
 		?>
 	</select>
@@ -105,19 +98,15 @@
 				width: 90%;
 				margin-left: 15px;">
 		<?php
-			$query="select * from exit_status_table;";
-		
-			$result = mysqli_query($conn, $query) or die("Ошибка " . mysqli_error($conn));
-		
-			if($result)
+			$json4 = file_get_contents('http://localhost/api/api/post/read_exit_status_table.php');
+			$searchList = json_decode($json4);
+			echo $searchList;
+			foreach ($searchList as $row)
 			{
-				while ($row = $result->fetch_assoc()) 
-				{
-					unset($id, $name);
-					$id = $row['id_exit_status'];
-					$name = $row['name']; 
-					echo '<option value="'.$id.'">'.$name.'</option>';
-				}
+				unset($id_exit_status, $name);
+				$id_exit_status = $row->id_exit_status;	
+				$name = $row->name;	
+				echo '<option value="'.$id_exit_status.'">'.$name.'</option>';
 			}
 		?>
 	</select>
@@ -232,19 +221,15 @@
 				width: 90%;
 				margin-left: 15px;">
 		<?php
-			$query="select * from age_limitations_table;";
-		
-			$result = mysqli_query($conn, $query) or die("Ошибка " . mysqli_error($conn));
-		
-			if($result)
+			$json4 = file_get_contents('http://localhost/api/api/post/read_age_limitations_table.php');
+			$searchList = json_decode($json4);
+			echo $searchList;
+			foreach ($searchList as $row)
 			{
-				while ($row = $result->fetch_assoc()) 
-				{
-					unset($id, $name);
-					$id = $row['id_age_limitations'];
-					$name = $row['name']; 
-					echo '<option value="'.$id.'">'.$name.'</option>';
-				}
+				unset($id_age_limitations, $name);
+				$id_age_limitations = $row->id_age_limitations;	
+				$name = $row->name;	
+				echo '<option value="'.$id_age_limitations.'">'.$name.'</option>';
 			}
 		?>
 	</select>

@@ -10,5 +10,4 @@
 		echo json_encode($to_encode);
 	}
 $result1->close();
-$mysqli->close();
 ?>

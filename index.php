@@ -8,17 +8,15 @@
 
 	<?php $currentPage = 1; #текущая страница
 		  $maxPage = 0; #max число страниц
-		  
 	?>
     <link rel="stylesheet" type="text/css" href="./css/style.css"> 
-	<script type="text/javascript" src="./js/functions.js"></script>
 	<script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
-	
+	<script type="text/javascript" src="./js/functions.js"></script>
 	<meta name="description" content="Сайт для просмотра аниме онлайн">
 	<meta name="keywords" content="аниме, видео, просмотр, онлайн, тянки, куны, наруто, пикачу, саске, аоши">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="./img/cat.ico" rel="shortcut icon" type="image/x-icon">
-	<?php include "./pages/database/connect.php"; ?>
+	
 </head>
 
 <body>
