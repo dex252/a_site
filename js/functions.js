@@ -25,9 +25,9 @@ function NumPage(number){
 					img_link = data[i-1]["img_link"]
 					
 					div.style.backgroundImage=("url("+img_link+")");
-						
 					animeMainField.appendChild(div);
-				
+					document.getElementById('block'+i).innerHTML = '<span">'+i+'</span>';
+
 				}
 				
 				i+=1;

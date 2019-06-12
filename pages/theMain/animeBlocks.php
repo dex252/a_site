@@ -15,7 +15,8 @@
 			if ($j > (1*($currentPage*12)-12) && $j < (12*$currentPage + 1))
 			{
 				echo ('
-				<div id="block'.$id.'" class="animeBlock" style="background-image: url('.$link.');">		
+				<div id="block'.$id.'" class="animeBlock" style="background-image: url('.$link.');">	
+					<text>'.$id.'</text>
 				</div>
 					');
 			}

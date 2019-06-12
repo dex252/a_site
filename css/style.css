@@ -116,7 +116,7 @@
     font-size: 24pt;
 	line-height: 16px;
 	font-family: Impact, Arial, Helvetica, sans-serif;
-    color: blue;
+    color: white;
     cursor: pointer;/* тип курсора - лапа */
     user-select: none;/* запрет на выделение текста */
 	margin-top: 10px;
@@ -235,11 +235,28 @@ color: skyblue !important;
 	width: 20%;
 	margin-left: 4%;
 	margin-bottom: 1%;
+	text-align: center;
+	vertical-align: top;
+	color: transparent;
+	font-size: 20pt;
+	font-family: Impact, Arial, Helvetica, sans-serif;
+}
+
+.animeBlock:hover{
+	display: inline-block;
+	background: transparent;
+	background-size: cover;
+	height: 32%;
+	width: 20%;
+	margin-left: 4%;
+	margin-bottom: 1%;
+	box-shadow:0 0 0 128px rgba(0, 0, 0, 0.63) inset;
+	color: white;
 }
 
 #scrollContainer{
 	display: inline-block;
-	background: black;
+	background: transparent;
 	margin-left: 30%;
 	height: 40px;
 	width: 20%;
@@ -248,7 +265,7 @@ color: skyblue !important;
 
 .pageScroll{
 	display: inline-block;
-	background: yellow;
+	background: deepskyblue;
 	height: 90%;
 	width: 50px;
 	margin-left: 2%;
