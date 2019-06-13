@@ -18,15 +18,14 @@ function NumPage(number){
 				var div=document.createElement('block'+i);
 				div.id = "block"+i;
 				div.className = "animeBlock";
-				
 				if (data[i-1])
 				{
 					id_anime = data[i-1]["id_anime"]
 					img_link = data[i-1]["img_link"]
-					
+					name_anime = data[i-1]['name']
 					div.style.backgroundImage=("url("+img_link+")");
 					animeMainField.appendChild(div);
-					document.getElementById('block'+i).innerHTML = '<span">'+i+'</span>';
+					document.getElementById('block'+i).innerHTML = '<span">'+name_anime+'</span>';
 
 				}
 				

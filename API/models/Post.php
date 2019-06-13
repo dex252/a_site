@@ -5,8 +5,8 @@
     private $table = 'anime_table';
 
     // Post Properties
-    public $id_anime;
-    public $img_link;
+  //  public $id_anime;
+  //  public $img_link;
 
     // Constructor with DB
     public function __construct($db) {
@@ -16,7 +16,7 @@
     // Get Posts
     public function read() {
       // Create query
-      $query = 'SELECT DISTINCT id_anime, img_link FROM ' . $this->table . '';
+      $query = 'SELECT DISTINCT * FROM ' . $this->table . '';
       // Prepare statement
       $stmt = $this->conn->prepare($query);
       // Execute query

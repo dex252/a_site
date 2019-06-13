@@ -238,8 +238,13 @@ color: skyblue !important;
 	text-align: center;
 	vertical-align: top;
 	color: transparent;
-	font-size: 20pt;
+	font-size: 14pt;
 	font-family: Impact, Arial, Helvetica, sans-serif;
+	user-select: none;
+}
+
+.testtext{
+	text-align: left;
 }
 
 .animeBlock:hover{

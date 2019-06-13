@@ -29,7 +29,19 @@
 
       $post_item = array(
         'id_anime' => $id_anime,
-        'img_link' => $img_link
+		'id_ganre' => $id_ganre,
+		'id_age_limitations' => $id_age_limitations,
+		'id_video_type' => $id_video_type,
+		'id_exit_status' => $id_exit_status,
+		'name' => $name,
+		'year' => $year,
+		'author' => $author,
+		'rating' => $rating,
+		'num_series' => $num_series,
+		'discription' => $discription,
+        'img_link' => $img_link,
+		'date_created' => $date_created,
+		'date_last_change' =>$date_last_change
       );
 
       // Push to "data"

@@ -11,12 +11,14 @@
 			unset($id, $link);
 			$id = $row->id_anime;	
 			$link = $row->img_link;	
+			$name = $row->name;
 			//if ($id > (1*($currentPage*12)-12) && $id < (12*$currentPage + 1))
 			if ($j > (1*($currentPage*12)-12) && $j < (12*$currentPage + 1))
 			{
 				echo ('
 				<div id="block'.$id.'" class="animeBlock" style="background-image: url('.$link.');">	
-					<text>'.$id.'</text>
+					<text>'.$name.'</text>
+					<div class="testtext">'.$name.'</div>
 				</div>
 					');
 			}
