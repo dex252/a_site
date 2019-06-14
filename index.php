@@ -23,6 +23,7 @@
 
     <header>
 		<?php include "./pages/header.php"; ?>
+		<!--<iframe width="650" height="400" src="http://video.sibnet.ru/shell.php?videoid=3535100" style="position:relative; z-index:500"></iframe> -->
 	</header>
 	
 	<div id="foundation">
