@@ -3,13 +3,23 @@
 	padding:0;
 }
 
+#FullStack{
+	background: rgba(0,100,100,0.2);
+}
+
+#body{
+	min-width: 720px;
+	max-width: 1200px;
+	margin:0 auto;
+}
+
 .Header {
     justify-content: center;
     align-items: center; 
     background-repeat: no-repeat;
 	background-size: cover;
-    height:350px; min-height:350px; max-height:450px;
-	width: 100%; min-width: 1150px;
+    height:200px;
+	width: 100%;
 }
 
 #enter {
@@ -34,8 +44,8 @@
 }
 
 .HeaderImage{
-	width: 100%; min-width: 1150px;
-	height: 100%; min-height: 240px;
+	width: 100%;
+	height: 100%;
     position: relative;
 }
 
@@ -45,8 +55,8 @@
     align-items: center; 
     background-repeat: no-repeat;
     background-size: 100%;
-    height:60px; min-height:60px; max-height:60px;
-	width: 100%;  min-width: 1150px;
+    height:40px; min-height:40px; max-height:40px;
+	width: 100%; 
 	animation: background 3s infinite alternate;
 	background: skyblue;
 }
@@ -58,35 +68,40 @@
   }
 }
 
-.buttonMainMenu{
+#buttonMainMenuGeneral{
 	display: inline-block;
 	float: right;
-	height: 60px;
+	height: 40px;
 	width: 135px;
 	background: transparent;
-	margin-left: 0px;
-	margin-right: 10px;
-	margin-top:20px;
+	margin-top:10px;
+}
+
+#buttonMainMenuTop100{
+	display: inline-block;
+	float: right;
+	height: 40px;
+	width: 135px;
+	background: transparent;
+	margin-top:5px;
 }
 
 #buttonRandomMenuType{
 	display: inline-block;
 	float: right;
-	height: 60px;
+	height: 40px;
 	width: 170px;
 	background: transparent;
-	margin-right: 25px;
-	margin-top:20px;
+	margin-top:5px;
 }
 
 #buttonMainMenuHelpType{
 	display: inline-block;
 	float: right;
-	height: 60px;
+	height: 40px;
 	width: 130px;
-	margin-right: 50px;
 	background: transparent;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 .TextMenuStyle{
@@ -96,7 +111,7 @@
 
 .ButtonMenuWhite {      
     position: relative; 
-    font-size: 24pt;
+    font-size: 20pt;
 	line-height: 16px;
 	font-family: Impact, Arial, Helvetica, sans-serif;
     color: white;
@@ -170,11 +185,10 @@
 	display: inline-block;
 	box-shadow: 0 0 10px rgba(200,0,200,0.9);
 	float: left;
-	height: 40px;
-	min-width: 400px; width: 40%;
+	height: 30px;
+	width: 96%;
+	margin-left: 2%;
 	background: transparent;
-	margin-left: 20px;
-	margin-top:10px;
 }
 
 #searchSymbol{
@@ -183,8 +197,8 @@
 	background-size: cover;
 	float: left;
 	float: left;
-	height: 40px;
-	width: 40px;
+	height: 30px;
+	width: 30px;
 }
 
 .SearchingClass{
@@ -194,12 +208,12 @@
 #searchText{
 	display: block;
 	background: transparent;
-	margin-left:40px;
-	width: 100% - 40px;
+	margin-left:30px;
+	width: 100% - 30px;
 }
 
 .searchTextInput{
-	height: 40px;
+	height: 30px;
 	padding: 10px 30px;
 	width: 100%;
 }
@@ -213,18 +227,17 @@ color: skyblue !important;
 	align-items:center;
 	display: inline-block;
 	height:100%;
-	width:100%; min-width: 1400px;
-	background: rgba(0,100,100,0.2);
+	width:100%;
+
 }
 
 #animeMainField{
 	display: inline-block;
 	margin-top:10px;
-	margin-left: 5%;
 	float: center;
 	background: transparent;
-	height: 990px;
-	width: 70%;	min-width:1000px;
+	height: 960px;
+	width: 80%;
 }
 
 .animeBlock{
@@ -232,8 +245,8 @@ color: skyblue !important;
 	background: transparent;
 	background-size: cover;
 	height: 32%;
-	width: 20%;
-	margin-left: 4%;
+	width: 23%;
+	margin-left: 1%;
 	margin-bottom: 1%;
 	text-align: center;
 	vertical-align: top;
@@ -248,13 +261,6 @@ color: skyblue !important;
 }
 
 .animeBlock:hover{
-	display: inline-block;
-	background: transparent;
-	background-size: cover;
-	height: 32%;
-	width: 20%;
-	margin-left: 4%;
-	margin-bottom: 1%;
 	box-shadow:0 0 0 128px rgba(0, 0, 0, 0.63) inset;
 	color: white;
 }
@@ -324,9 +330,9 @@ color: skyblue !important;
 #scrollContainer{
 	display: inline-block;
 	background: transparent;
-	margin-left: 30%;
+	margin-left: 20%;
 	height: 40px;
-	width: 20%;
+	width: 50%;
 	min-width:370px;
 }
 
@@ -342,8 +348,8 @@ color: skyblue !important;
 	display: inline-block;
 	vertical-align: top;
 	margin-top:10px;
-	box-shadow: inset 0 0 10px 7px rgba(0,100,255,0.9);
-	width: 20%; min-width: 300px;
+	box-shadow: inset 0 0 5px 7px rgba(0,100,255,0.9);
+	width: 20%;
 	height: 7*80px + 60px;
 	background: rgba(0 ,0, 255,0.1);
 }
@@ -351,7 +357,7 @@ color: skyblue !important;
 #searchingTextField{
 	display: inline-block;
 	width: 100%;
-	height: 60px;
+	height: 30px;
 	background: rgba(0,0,200,0.2);
 }
 
@@ -359,8 +365,20 @@ color: skyblue !important;
 	display: inline-block;
 	vertical-align: top;
 	width: 100%;
-	height: 80px;
+	height: 60px;
 	background: transparent;
+}
+
+#buttonSearch{
+	width: 90%;
+	margin-left:5%;
+	margin-bottom:5%;
+	height: 30px;
+	cursor: pointer;
+}
+
+#buttonSearch:hover{
+	box-shadow:0 0 1px 1px rgba(100,100,255,0.9);
 }
 
 /* Активная ссылка на странице */

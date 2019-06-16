@@ -19,23 +19,19 @@
 	
 </head>
 
-<body>
-
-    <header>
-		<?php include "./pages/header.php"; ?>
-		<!--<iframe width="650" height="400" src="http://video.sibnet.ru/shell.php?videoid=3535100" style="position:relative; z-index:500"></iframe> -->
-	</header>
-	
-	<div id="foundation">
-		<div id ="animeMainField">
-			<?php include "./pages/theMain/animeBlocks.php"; ?>
-		</div><div id="searchContainer">
-			<?php include "./pages/searching.php"; ?>
-		</div><div id ="scrollContainer">
-			<?php include "./pages/theMain/pagesBlock.php"; ?>
-		</div>
+<div id="FullStack">
+	<div id="body">
+			<?php include "./pages/header.php"; ?>
+		<div id="foundation">
+			<div id ="animeMainField">
+				<?php include "./pages/theMain/animeBlocks.php"; ?>
+			</div><div id="searchContainer">
+				<?php include "./pages/searching.php"; ?>
+			</div><div id ="scrollContainer">
+				<?php include "./pages/theMain/pagesBlock.php"; ?>
+			</div>
 		
-	</div>	
-</body>
-
+		</div>	
+	</div>
+</div>
 </html>
