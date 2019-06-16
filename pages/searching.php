@@ -12,7 +12,7 @@
 </div>
 
 <div id ="ganreField" class = "FieldSearchRight">
-	<div style="font-size:26px; 
+	<div style="font-size:22px; 
 				font-family: Impact, Arial, Helvetica, sans-serif;
 				color: rgba(0,150,250);
 				text-align: center;

@@ -25,8 +25,12 @@
 		<div id="foundation">
 			<div id ="animeMainField">
 				<?php include "./pages/theMain/animeBlocks.php"; ?>
-			</div><div id="searchContainer">
-				<?php include "./pages/searching.php"; ?>
+			</div><div id ="rigthField" >
+				<div id="searchContainer">
+					<?php include "./pages/searching.php"; ?>
+				</div><div id="Profile">
+						<?php include "./pages/profile.php"; ?>
+					</div>
 			</div><div id ="scrollContainer">
 				<?php include "./pages/theMain/pagesBlock.php"; ?>
 			</div>

@@ -1,19 +1,7 @@
 <div id="logo" class="Header">
 
 	<img src="./img/header/background.png" class="HeaderImage">
-	
-	<div id="register">
-		<a href="./index.html" type="text/css" class="TextMenuStyle">
-			<div class="ButtonRegistration" >Регистрация</div>
-		</a>
-	</div>
-	
-	<div id="enter">
-		<a href="./index.html" type="text/css" class="TextMenuStyle">
-			<div class="ButtonEnter"> Вход</div>
-		</a>
-	</div>
-	
+
 </div> 
 		
 <div id="menu">
