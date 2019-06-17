@@ -5,6 +5,7 @@ function StartSearch() {
 
 function NumPage(number){
 		$currentPage=number.id.replace(/[^-0-9]/gim,'');
+
 		$.get("http://localhost/api/api/post/read_block.php").done(function(data){
 			
 		var $main = document.getElementById('animeMainField');
