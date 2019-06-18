@@ -249,6 +249,7 @@ color: skyblue !important;
 	float: center;
 	background: transparent;
 	height: 960px;
+	overflow: hidden;
 	width: 80%;
 }
 
@@ -316,7 +317,7 @@ color: skyblue !important;
 .BackIcon{
 	display: inline-block;
 	height: 30px;
-	width: 30px;
+	width: 100%;
 	background-image: url(../img/backToBack.png);
 	background-size: cover;
 	margin-top: 480px;
@@ -326,17 +327,29 @@ color: skyblue !important;
 	display: inline-block;
 	margin-left: 2%;
 	width: 70%;
-	height: 310px;
+	height: 350px;
+	overflow: auto;
+	text-overflow: ellipsis;
 	background: transparent;
 	vertical-align: top;
 }
 
+.watchChoseVideoText{
+	display: inline-block;
+	text-align: center;
+	width:90%;
+	margin-top: 10px;
+	height:30px;
+}
+
 .Video{
 	position: relative;
-	height: 650px;
-	width: 50%;
+	height: 400px;
+	width: 90%;
 	vertical-align: left;
-	margin-left: 22%;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 1%;
 	z-index: 500;
 }
 #scrollContainer{
