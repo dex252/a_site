@@ -14,7 +14,10 @@
   $post = new Post($db);
 
   // Blog post query
-  $result = $post->read();
+
+  $result = $post->read( $post->ganre = isset($_GET['ganre']) ? $_GET['ganre'] : 0,
+						 $post->type = isset($_GET['type']) ? $_GET['type'] : 0,
+						 $post->status = isset($_GET['status']) ? $_GET['status'] : 0);
   // Get row count
   $num = $result->rowCount();
 
@@ -30,7 +33,6 @@
       $post_item = array(
         'id_anime' => $id_anime,
 		'id_ganre' => $id_ganre,
-		'id_age_limitations' => $id_age_limitations,
 		'id_video_type' => $id_video_type,
 		'id_exit_status' => $id_exit_status,
 		'name' => $name,
@@ -40,8 +42,6 @@
 		'num_series' => $num_series,
 		'discription' => $discription,
         'img_link' => $img_link,
-		'date_created' => $date_created,
-		'date_last_change' =>$date_last_change
       );
 
       // Push to "data"

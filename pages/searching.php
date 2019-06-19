@@ -24,7 +24,7 @@
 		Жанр
 	</div>
 	
-	<select name="selectGanre" 
+	<select id="selectGanre" name="selectGanre" 
 			style="font-size:20px; 
 				font-family: Comic Sans MS, Comic Sans, cursive;
 				text-align-last: center;			
@@ -60,7 +60,8 @@
 		Тип
 	</div>
 	
-	<select  style="font-size:20px; 
+	<select id="selectType" name="selectType"
+				style="font-size:20px; 
 				font-family: Comic Sans MS, Comic Sans, cursive;
 				text-align-last: center;			
 				color: rgba(0,150,250);
@@ -91,7 +92,8 @@
 		Статус
 	</div>
 	
-	<select  style="font-size:20px; 
+	<select id="selectStatus" name="selectStatus" 
+				style="font-size:20px; 
 				font-family: Comic Sans MS, Comic Sans, cursive;
 				text-align-last: center;			
 				color: rgba(0,150,250);
@@ -123,7 +125,8 @@
 		Год выпуска
 	</div>
 	
-	<div style="font-size:20px; 
+	<div id="selectYear" name="selectYear"
+				style="font-size:20px; 
 				font-family: Impact, Arial, Helvetica, sans-serif;
 				color: rgba(0,150,250);
 				text-align: center;
@@ -155,7 +158,7 @@
 	</div>
 </div>
 
-<button id = "buttonSearch">
+<button id = "buttonSearch" onclick="searchVideo()">
 	<div style="font-size:22px; 
 				font-family: Impact, Arial, Helvetica, sans-serif;
 				color: rgba(0,150,250);

@@ -36,9 +36,9 @@
 						<?php include "./pages/profile.php"; ?>
 					</div>
 			</div><div id ="scrollContainer">
-						<section class="regular slider">
+						<div id="sliderPage" class="regular slider">
 							<?php include "./pages/theMain/pagesBlock.php"; ?> 
-						</section>
+						</div>
 					</div>	
 	</div>
 </div>

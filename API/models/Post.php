@@ -14,9 +14,60 @@
     }
 
     // Get Posts
-    public function read() {
+    public function read($ganre, $type, $status) {
       // Create query
-      $query = 'SELECT DISTINCT * FROM ' . $this->table . '';
+	  $check=0;
+	  if ($ganre==0 and $type ==0 and $status==0)
+	  {
+		   $query = 'SELECT DISTINCT * FROM '.$this->table.'';
+	  }
+	  else
+	  { 
+		$query = 'SELECT DISTINCT * FROM '.$this->table.' WHERE ';
+
+		if ($ganre==0) 
+		{ 
+			$ganreSelect="" ;
+		}
+		else
+		{
+			$ganreSelect='`id_ganre` = '.$ganre.'';
+			$query.= $ganreSelect;
+			$check=1;
+		}
+				
+		if ($type==0) 
+		{ 
+			$typeSelect="" ;
+		}
+		else
+		{
+			$typeSelect=' `id_video_type` = '.$type.'';
+			if ($check==1) 
+				{
+					$query.= " AND ";
+				} 
+				$query.= $typeSelect;
+				$check=1;
+		}
+		
+		if ($status==0) 
+		{ 
+			$statusSelect="" ;
+		}
+		else
+		{
+			$statusSelect=' `id_exit_status` = '.$status.'';
+			if ($check==1) 
+				{
+					$query.= " AND ";
+				} 
+				$query.= $statusSelect;
+				$check=1;
+		}
+
+	  }
+
       // Prepare statement
       $stmt = $this->conn->prepare($query);
       // Execute query
