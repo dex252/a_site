@@ -6,11 +6,8 @@ function StartSearch() {
 //Клик по слайдеру для перелистывания
 function NumPage(number){
 		$currentPage=number.id.replace(/[^-0-9]/gim,'');
-		var a_janre=document.getElementById('selectGanre').selectedIndex;
-		var a_type=document.getElementById('selectType').selectedIndex;
-		var a_status=document.getElementById('selectStatus').selectedIndex;
-		
-		$.get("http://localhost/api/api/post/read_block.php", {a_janre, a_type, a_status}).done(function(data){
+
+		$.get("http://localhost/api/api/post/read_block.php", {"ganre":arr[0], "type":arr[1], "status":arr[2]}).done(function(data){
 			
 		var $main = document.getElementById('animeMainField');
 		$main.innerHTML = '';
@@ -51,7 +48,7 @@ function iSeeDeadPeople(e){
 	//номер блока
 	i=el.id.replace(/[^-0-9]/gim,'');
 	
-	$.get("http://localhost/api/api/post/read_block.php").done(function(data){
+	$.get("http://localhost/api/api/post/read_block.php", {"ganre":arr[0], "type":arr[1], "status":arr[2]}).done(function(data){
 		
 		//возврат к предыдущему окну
 		var back=document.createElement('back');
@@ -76,7 +73,7 @@ function iSeeDeadPeople(e){
 		
 		nameText = data[i-1]["name"]
 		exitStatusText = data[i-1]["id_exit_status"]
-	//	ganreText = data[i-1]["id_ganre"] //запрос по id жанра
+		ganreText = data[i-1]["id_ganre"] //запрос по id жанра
 		yearText = data[i-1]["year"]
 		authorText = data[i-1]["author"]
 		videoTypeText = data[i-1]["id_video_type"]
@@ -86,7 +83,7 @@ function iSeeDeadPeople(e){
 		discription.innerHTML +='<p style="text-align:center;  font-weight: 600;">'+nameText+'</p>'
 		discription.innerHTML +='<p>Статус: '+exitStatusText+'</p>'
 		discription.innerHTML +='<p>Год: '+yearText+'</p>'
-		//discription.innerHTML +='<p>Жанр: '+ganreText+'</p>'
+		discription.innerHTML +='<p>Жанр: '+ganreText+'</p>'
 		discription.innerHTML +='<p>Автор: '+authorText+'</p>'
 		discription.innerHTML +='<p>Тип: '+videoTypeText+'</p>'
 		discription.innerHTML +='<p>Серии: '+numSeriesText+'</p>'
@@ -136,13 +133,21 @@ function iSeeDeadPeople(e){
 	});
 }
 
-function searchVideo(e){	
+var arr = [0, 0, 0, 0 ,9999];
+
+function searchVideo(e){
+	
 	var ganre=document.getElementById('selectGanre').selectedIndex;
 	var type=document.getElementById('selectType').selectedIndex;
 	var status=document.getElementById('selectStatus').selectedIndex;
-	ganre=3;
-	$.get("http://localhost/api/api/post/read_block.php", {"ganre":ganre, "type":type, "status":status}).done(function(data){
-		alert(data.length);
+		
+	arr[0] = ganre;
+	arr[1] = type;
+	arr[2] = status;
+	
+	$.get("http://localhost/api/api/post/read_block.php", {"ganre":arr[0], "type":arr[1], "status":arr[2]}).done(function(data){
+		//alert(arr[1]);
+
 		maxPage = data.length;	
 		maxPage = Math.ceil(maxPage/12);
 		countPages = 1;
@@ -155,4 +160,6 @@ function searchVideo(e){
 		
 	
 	});
+	
+	NumPage(document.getElementById('pageBlock1'));
 }
