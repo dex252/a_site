@@ -1,9 +1,26 @@
 var arr = [0, 0, 0, 0 ,9999, ""];
+var zamenaKnopok = 0;
+
+//Каждый прогон
+function changeButtons(num ) //<- num-число страниц
+{
+	if (zamenaKnopok == 0) firstChange() //выполнить  первый прогон первый раз
+}
+
+//ПЕРВЫЙ ПРОГОН
+function firstChange()
+{
+	var lastIndex = $('#sliderPage').eq($('#sliderPage').length - 1)
+}
 
 function StartSearch() {
 	var name_anime=document.getElementById('searchTextInput').value;
 	arr = [0, 0, 0, 0 ,9999, ""];
-	arr[5] = name_anime;
+	if(name_anime.length>0)
+	{
+		arr[5] = name_anime;
+	}
+	else name_anime="";
 
 	NumPage(document.getElementById('pageBlock1'));
 }
@@ -39,10 +56,16 @@ function NumPage(number){
 
 				}
 				
-				i+=1;
-	 		} 
+				i+=1;    
+	 		}
+			//смотрим на длину полученного ответа и высылаем результат
+			//$('#sliderPage').slick('slickRemove', 0);
+			//$('#sliderPage').slick('unslick');
+			var lastIndex = $('#sliderPage').eq($('#sliderPage').length - 1)//ВОТ ТУТ основное
+			alert(lastIndex.id);
 		});
 }
+
 //показать видео по id
 function iSeeDeadPeople(e){
 	e = e || window.event;
@@ -53,7 +76,7 @@ function iSeeDeadPeople(e){
 	//номер блока
 	i=el.id.replace(/[^-0-9]/gim,'');
 	
-	$.get("http://localhost/api/api/post/read_block.php", {"ganre":arr[0], "type":arr[1], "status":arr[2]}).done(function(data){
+	$.get("http://localhost/api/api/post/read_block.php", {"ganre":arr[0], "type":arr[1], "status":arr[2], "year1":arr[3], "year2":arr[4], "name_anime":arr[5]}).done(function(data){
 		
 		//возврат к предыдущему окну
 		var back=document.createElement('back');
@@ -145,16 +168,30 @@ function searchVideo(e){
 	var status=document.getElementById('selectStatus').selectedIndex;
 	var year1=document.getElementById('year1').value;
 	var year2=document.getElementById('year2').value;
-		
+
 	arr[0] = ganre;
 	arr[1] = type;
 	arr[2] = status;
-	arr[3] = year1;
-	arr[4] = year2;
 	arr[5]="";
 	
-	$.get("http://localhost/api/api/post/read_block.php", {"ganre":arr[0], "type":arr[1], "status":arr[2]}).done(function(data){
-		//alert(arr[1]);
+	if(year1.length>0)
+	{
+		arr[3] = year1;
+	}
+	else 
+	{
+		arr[3] = 0;
+	}
+	if(year2.length>0)
+	{
+		arr[4] = year2;
+	}
+	else
+	{
+		arr[4] = 9999;
+	}
+	
+	$.get("http://localhost/api/api/post/read_block.php", {"ganre":arr[0], "type":arr[1], "status":arr[2], "year1":arr[3], "year2":arr[4], "name_anime":arr[5]}).done(function(data){
 
 		maxPage = data.length;	
 		maxPage = Math.ceil(maxPage/12);

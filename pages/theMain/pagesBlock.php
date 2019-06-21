@@ -8,7 +8,7 @@
 	$maxPage = count($animeList);
 	$maxPage = ceil($maxPage/12);
 	$countPages = 1;
-	
+
 	while ($countPages <= $maxPage)
 	{
 		echo ('
@@ -18,4 +18,7 @@
 		');	
 		$countPages +=1;
 	}	
+
+	unset($animeList);
+	unset($json);		
 ?>	

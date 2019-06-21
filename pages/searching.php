@@ -133,7 +133,7 @@
 				user-select: none;"
 		> 
 		от
-		<input  id = "year1"
+		<input  id = "year1" 
 				onkeydown = "javascript: return ( ((event.keyCode>47)&&(event.keyCode<58))||(event.keyCode==8) )"
 				maxlength="4"
 				style="font-size:16px; 

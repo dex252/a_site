@@ -48,6 +48,7 @@
 						color: deepskyblue;"
 						type="search" 
 						name="searhInput" 
+						maxlength="50";
 						placeholder="Найти аниме по названию"> 
 			</p>
 		</div>

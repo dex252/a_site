@@ -1,5 +1,7 @@
 <?php
+
   class Post {
+
     // DB stuff
     private $conn;
     private $table = 'anime_table';
@@ -15,13 +17,14 @@
 
     // Get Posts
     public function read($ganre, $type, $status, $year1, $year2, $name_anime) {
-      // Create query
+    // Create query
+
 	  $check=0;
 	  if ($ganre==0 and $type ==0 and $status==0 and $year1==0 and $year2==9999 and $name_anime=="")
 	  {
 		   $query = 'SELECT DISTINCT * FROM '.$this->table.'';
-	  }
-	  else
+	  }	
+	  elseif ($name_anime=="")
 	  { 
 		$query = 'SELECT DISTINCT * FROM '.$this->table.' WHERE ';
 
@@ -65,7 +68,19 @@
 				$query.= $statusSelect;
 				$check=1;
 		}
-
+		
+		$yearSelect=' `year` > '.$year1.' AND `year` < '.$year2.'';
+		if ($check==1) 
+			{
+				$query.= " AND ";
+			} 
+			
+		$query.= $yearSelect;
+		$check=1;
+	  }
+	  else 
+	  {
+		$query = 'SELECT DISTINCT * FROM '.$this->table.' WHERE LOWER (`name`) LIKE "%'.mb_convert_case($name_anime, MB_CASE_UPPER,"UTF-8" ).'%"';
 	  }
 
       // Prepare statement
