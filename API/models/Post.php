@@ -14,10 +14,10 @@
     }
 
     // Get Posts
-    public function read($ganre, $type, $status) {
+    public function read($ganre, $type, $status, $year1, $year2, $name_anime) {
       // Create query
 	  $check=0;
-	  if ($ganre==0 and $type ==0 and $status==0)
+	  if ($ganre==0 and $type ==0 and $status==0 and $year1==0 and $year2==9999 and $name_anime=="")
 	  {
 		   $query = 'SELECT DISTINCT * FROM '.$this->table.'';
 	  }

@@ -17,7 +17,10 @@
 
   $result = $post->read( $post->ganre = isset($_GET['ganre']) ? $_GET['ganre'] : 0,
 						 $post->type = isset($_GET['type']) ? $_GET['type'] : 0,
-						 $post->status = isset($_GET['status']) ? $_GET['status'] : 0);
+						 $post->status = isset($_GET['status']) ? $_GET['status'] : 0,
+						 $post->year1 = isset($_GET['year1']) ? $_GET['year1'] : 0,
+						 $post->year2 = isset($_GET['year2']) ? $_GET['year2'] : 9999,
+						 $post->name_anime = isset($_GET['name_anime']) ? $_GET['name_anime'] : "");
   // Get row count
   $num = $result->rowCount();
 
@@ -41,7 +44,7 @@
 		'rating' => $rating,
 		'num_series' => $num_series,
 		'discription' => $discription,
-        'img_link' => $img_link,
+        'img_link' => $img_link
       );
 
       // Push to "data"

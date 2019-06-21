@@ -42,7 +42,7 @@
 		</span>
 			
 		<div id="searchText">
-			<p><input class="searchTextInput" 
+			<p><input id = "searchTextInput" class="searchTextInput" 
 						style="font-size:20px; 
 						font-family: Comic Sans MS, Comic Sans, cursive; 
 						color: deepskyblue;"

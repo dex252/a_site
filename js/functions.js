@@ -1,13 +1,18 @@
+var arr = [0, 0, 0, 0 ,9999, ""];
+
 function StartSearch() {
-	var now = new Date();
-	alert( now );
+	var name_anime=document.getElementById('searchTextInput').value;
+	arr = [0, 0, 0, 0 ,9999, ""];
+	arr[5] = name_anime;
+
+	NumPage(document.getElementById('pageBlock1'));
 }
 
 //Клик по слайдеру для перелистывания
 function NumPage(number){
 		$currentPage=number.id.replace(/[^-0-9]/gim,'');
 
-		$.get("http://localhost/api/api/post/read_block.php", {"ganre":arr[0], "type":arr[1], "status":arr[2]}).done(function(data){
+		$.get("http://localhost/api/api/post/read_block.php", {"ganre":arr[0], "type":arr[1], "status":arr[2], "year1":arr[3], "year2":arr[4], "name_anime":arr[5]}).done(function(data){
 			
 		var $main = document.getElementById('animeMainField');
 		$main.innerHTML = '';
@@ -133,17 +138,20 @@ function iSeeDeadPeople(e){
 	});
 }
 
-var arr = [0, 0, 0, 0 ,9999];
-
 function searchVideo(e){
 	
 	var ganre=document.getElementById('selectGanre').selectedIndex;
 	var type=document.getElementById('selectType').selectedIndex;
 	var status=document.getElementById('selectStatus').selectedIndex;
+	var year1=document.getElementById('year1').value;
+	var year2=document.getElementById('year2').value;
 		
 	arr[0] = ganre;
 	arr[1] = type;
 	arr[2] = status;
+	arr[3] = year1;
+	arr[4] = year2;
+	arr[5]="";
 	
 	$.get("http://localhost/api/api/post/read_block.php", {"ganre":arr[0], "type":arr[1], "status":arr[2]}).done(function(data){
 		//alert(arr[1]);
