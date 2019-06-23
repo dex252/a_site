@@ -1,16 +1,43 @@
 var arr = [0, 0, 0, 0 ,9999, ""];
-var zamenaKnopok = 0;
+var currentPage = -1;// Текущее число страниц, считаем в slider-functions.js
 
 //Каждый прогон
-function changeButtons(num ) //<- num-число страниц
+function changeButtons(num) //<- num-число страниц, которое необходимо выставить, для этого нужно почитсить slick-slider от currentPage страниц.
 {
-	if (zamenaKnopok == 0) firstChange() //выполнить  первый прогон первый раз
-}
+				//смотрим на длину полученного ответа и высылаем результат
+			//$('#sliderPage').slick('slickRemove', 0);
+			//$('#sliderPage').slick('unslick');
+			//var lastIndex = $('#sliderPage').eq($('#sliderPage').length - 1)//ВОТ ТУТ основное - определение длины
+		//	$('#sliderPage').slick('slickAdd', '<div><h3>' + 10 + '</h3></div>');
+			//alert(lastIndex.id);
 
-//ПЕРВЫЙ ПРОГОН
-function firstChange()
-{
-	var lastIndex = $('#sliderPage').eq($('#sliderPage').length - 1)
+	//смотрим на разницу в > или < сторону по страницам, в зависимости от разницы запускаем функции добавления/удаления
+	if (currentPage > num) minusSlickSlider(currentPage-num);
+	else plusSlickSlider(num-currentPage);
+	//приравниваем полученное число страниц к текущим
+	currentPage = num;
+	
+	//удаляем указанное число страниц
+	function minusSlickSlider(numMinus){
+		
+		for (var i = 1; i <= numMinus; i++) 
+		{
+			$('#sliderPage').slick('slickRemove', currentPage-i);
+		}			
+		
+	}
+	//добавляем указанно число страниц
+	function plusSlickSlider(numPlus){
+		
+		for (var i = 1; i <= numPlus; i++) 
+		{
+			$('#sliderPage').slick('slickAdd', 
+			
+			'<div><div id="pageBlock'+(currentPage+i)+'" class="pageScroll" onclick="NumPage(this)";"><div class="ButtonPage" >'+(currentPage+i)+'</div></div></div>'
+			
+			);
+		}	
+	}
 }
 
 function StartSearch() {
@@ -58,11 +85,11 @@ function NumPage(number){
 				
 				i+=1;    
 	 		}
-			//смотрим на длину полученного ответа и высылаем результат
-			//$('#sliderPage').slick('slickRemove', 0);
-			//$('#sliderPage').slick('unslick');
-			var lastIndex = $('#sliderPage').eq($('#sliderPage').length - 1)//ВОТ ТУТ основное
-			alert(lastIndex.id);
+			
+		//максимально возможное число страниц
+		maxPage = data.length;	
+		maxPage = Math.ceil(maxPage/12);
+		if (currentPage != maxPage) changeButtons(maxPage);
 		});
 }
 
@@ -126,7 +153,11 @@ function iSeeDeadPeople(e){
 		//img_link = data[i-1]["img_link"] <-сюда вставить видюхи?
 		video.id = "video";
 		video.className = "Video";
-		video.innerHTML += '<iframe width="100%" height="400" src="http://video.sibnet.ru/shell.php?videoid=3632282" frameborder="0" scrolling="no" allowfullscreen="" wmode="window" align="middle" style="position:relative; z-index:500;"></iframe>';	
+		//video.innerHTML += '<iframe width="100%" height="400" src="http://video.sibnet.ru/shell.php?videoid=3632282" frameborder="0" scrolling="no" allowfullscreen="" wmode="window" align="middle" style="position:relative; z-index:500;"></iframe>';	
+		
+		video.innerHTML += '<iframe width="100%" height="400" src="http://video.sibnet.ru/shell.php?videoid=3634504" frameborder="0" scrolling="no" allowfullscreen="" wmode="window" align="middle" style="position:relative; z-index:500;"></iframe>';	
+
+		//http://video.sibnet.ru/shell.php?videoid=3634504
 		
 		var choseVideo = document.createElement('div');
 		choseVideo.id = "watchVideo";
@@ -190,21 +221,6 @@ function searchVideo(e){
 	{
 		arr[4] = 9999;
 	}
-	
-	$.get("http://localhost/api/api/post/read_block.php", {"ganre":arr[0], "type":arr[1], "status":arr[2], "year1":arr[3], "year2":arr[4], "name_anime":arr[5]}).done(function(data){
-
-		maxPage = data.length;	
-		maxPage = Math.ceil(maxPage/12);
-		countPages = 1;
-
-		while (countPages<=maxPage) 
-		{
-			var div=document.getElementById('pageBlock' + countPages);
-			countPages +=1;
-		}
-		
-	
-	});
 	
 	NumPage(document.getElementById('pageBlock1'));
 }
